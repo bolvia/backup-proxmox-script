@@ -45,6 +45,7 @@ win_server="seu_servidor_windows"
 
 
 win_user="seu_usuario_windows"
+
 win_password="sua_senha_windows"
 
 
