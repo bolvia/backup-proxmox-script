@@ -31,6 +31,38 @@ do
   vzdump $vmid --compress lzo 
 done
 
+++++++++++++++++++++
+
+Script sem as legendas de instrução
+
+#!/bin/bash
+
+
+backup_dir="/backups
+
+
+win_server="seu_servidor_windows"
+
+
+win_user="seu_usuario_windows"
+win_password="sua_senha_windows"
+
+
+win_destination="/path/to/destination/on/windows/server"
+
+
+for vmid in $(qm list | awk '!/VMID/{print $1}')
+do
+  vzdump $vmid --compress lzo 
+done
+
+
++++++++++++++++++++++++++
+
+# Comando para transferir os backups para o servidor Windows usando o WinSCP
+# Certifique-se de ter o WinSCP instalado e o comando 'winscp' disponível no seu Proxmox
+winscp /command "option batch abort" "option confirm off" "open scp://$win_user:$win_password@$win_server/" "put $backup_dir/*.vma.lzo $win_destination/" "exit"
+
 # Comando para transferir os backups para o servidor Windows usando o WinSCP
 # Certifique-se de ter o WinSCP instalado e o comando 'winscp' disponível no seu Proxmox
 winscp /command "option batch abort" "option confirm off" "open scp://$win_user:$win_password@$win_server/" "put $backup_dir/*.vma.lzo $win_destination/" "exit"
