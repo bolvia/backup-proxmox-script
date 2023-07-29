@@ -1,5 +1,5 @@
 # backup-proxmox-script
-Backup automatizado proxmox para Wincp
+Backup automatizado proxmox para WinSCP
 
 Criar um diretório
 - mkdir /backups
