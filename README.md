@@ -57,6 +57,7 @@ for vmid in $(qm list | awk '!/VMID/{print $1}')
 do
 
   vzdump $vmid --compress lzo 
+  
 done
 
 
