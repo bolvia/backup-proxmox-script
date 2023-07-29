@@ -3,11 +3,12 @@ Backup automatizado proxmox para WinSCP
 
 Criar um diretório
 - mkdir /backups
+
+  
 +++++++++++
 
 Jogar o script no caminho backup_script.sh
 
-#!/bin/bash
 
 #!/bin/bash
 
